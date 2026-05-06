@@ -1,47 +1,110 @@
 /* ============================================
    Earn2Keep Landing Page Script
-   Handles email signup form submission
+   Connects the signup form to Supabase
    ============================================ */
 
-function handleSignup(event) {
-  event.preventDefault();
+// ============================================
+// Supabase configuration
+// (anon key is safe to expose — RLS controls access)
+// ============================================
+const SUPABASE_URL = "https://coxummtndniyozkuopsp.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNveHVtbXRuZG5peW96a3VvcHNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwODY1MzAsImV4cCI6MjA5MzY2MjUzMH0.pMbw0UemsJkUHtkc9nFPqo3b2-cA2DI5gz7CnAl_Cgo";
 
-  // Get form values
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const role = document.getElementById("role").value;
+// Initialize the Supabase client (uses the global "supabase" object loaded from the CDN)
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  // Basic validation
-  if (!name || !email || !role) {
-    alert("Please fill out all fields before submitting.");
-    return;
-  }
-
-  // For now, log the signup and show a success message.
-  // Later we'll connect this to Supabase to actually save the signup.
-  console.log("New signup:", { name, email, role, timestamp: new Date().toISOString() });
-
-  // Hide the form
+// ============================================
+// Form handling
+// ============================================
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("signup-form");
-  form.style.display = "none";
+  if (!form) return;
 
-  // Show the success message
-  const success = document.getElementById("signup-success");
-  success.hidden = false;
-  success.textContent = `Thanks, ${name.split(" ")[0]} — we've got you on the list. You'll hear from us soon.`;
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-  // Save to localStorage as a temporary backup until Supabase is connected
-  try {
-    const existingSignups = JSON.parse(localStorage.getItem("earn2keep-signups") || "[]");
-    existingSignups.push({
-      name,
-      email,
-      role,
-      timestamp: new Date().toISOString()
-    });
-    localStorage.setItem("earn2keep-signups", JSON.stringify(existingSignups));
-  } catch (e) {
-    // localStorage might be blocked — fail silently, user already saw success
-    console.warn("Could not save to localStorage:", e);
-  }
+    // Grab form values
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const roleInput = document.getElementById("role");
+    const button = document.getElementById("signup-btn");
+    const successMsg = document.getElementById("signup-success");
+    const errorMsg = document.getElementById("signup-error");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim().toLowerCase();
+    const role = roleInput.value;
+
+    // Hide any previous messages
+    successMsg.hidden = true;
+    errorMsg.hidden = true;
+
+    // Basic validation (HTML "required" handles most of this, but double-check)
+    if (!name || !email || !role) {
+      showError(errorMsg, "Please fill out all fields before submitting.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      showError(errorMsg, "Please enter a valid email address.");
+      return;
+    }
+
+    // Disable the button and show "submitting" state
+    button.disabled = true;
+    const originalButtonText = button.textContent;
+    button.textContent = "Sending...";
+
+    try {
+      // Insert the signup into Supabase
+      const { data, error } = await supabaseClient
+        .from("signups")
+        .insert([
+          {
+            name: name,
+            email: email,
+            role: role,
+            source: "landing_page"
+          }
+        ]);
+
+      if (error) {
+        console.error("Supabase insert error:", error);
+        showError(
+          errorMsg,
+          "Sorry, we couldn't save your signup. Please try again or contact us directly."
+        );
+        button.disabled = false;
+        button.textContent = originalButtonText;
+        return;
+      }
+
+      // Success — hide the form, show confirmation
+      form.style.display = "none";
+      const firstName = name.split(" ")[0];
+      successMsg.textContent = `Thanks, ${firstName} — we've got you on the list. You'll hear from us soon.`;
+      successMsg.hidden = false;
+    } catch (err) {
+      console.error("Unexpected error during signup:", err);
+      showError(
+        errorMsg,
+        "Sorry, something went wrong. Please try again in a moment."
+      );
+      button.disabled = false;
+      button.textContent = originalButtonText;
+    }
+  });
+});
+
+// ============================================
+// Helpers
+// ============================================
+function showError(element, message) {
+  element.textContent = message;
+  element.hidden = false;
+}
+
+function isValidEmail(email) {
+  // Simple email validation pattern
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }

@@ -52,7 +52,7 @@
             and be among the first organizations to run an Earn2Keep season.
           </p>
 
-          <form id="signup-form" class="signup-form" onsubmit="handleSignup(event)">
+          <form id="signup-form" class="signup-form">
             <div class="form-row">
               <input
                 type="text"
@@ -81,12 +81,11 @@
               <option value="scout-leader">Scout leader</option>
               <option value="other">Other</option>
             </select>
-            <button type="submit" class="btn-primary">Notify me at launch</button>
+            <button type="submit" id="signup-btn" class="btn-primary">Notify me at launch</button>
           </form>
 
-          <p id="signup-success" class="signup-success" hidden>
-            Thanks — we've got you on the list. You'll hear from us soon.
-          </p>
+          <p id="signup-success" class="signup-success" hidden></p>
+          <p id="signup-error" class="signup-error" hidden></p>
         </div>
       </div>
     </section>
@@ -148,6 +147,10 @@
     </div>
   </footer>
 
+  <!-- Supabase JS library — loads from official CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Our app script — handles form submission to Supabase -->
   <script src="script.js"></script>
 </body>
 </html>
