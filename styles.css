@@ -1,9 +1,9 @@
 /* ============================================
-   Earn2Keep Landing Page Stylesheet
-   Clean, modern, mobile-responsive
+   Earn2Keep Brand System
+   Royal Blue · Soft Navy · Warm Cream
+   Plus Jakarta Sans
    ============================================ */
 
-/* CSS Reset / Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,26 +11,35 @@
 }
 
 :root {
-  /* Brand colors — placeholder, easy to change later */
-  --color-navy: #0F1B3D;
-  --color-navy-light: #1E2D5F;
-  --color-accent: #00B86B;
-  --color-accent-dark: #008F52;
-  --color-text: #1A1A2E;
-  --color-text-muted: #5A5A70;
-  --color-bg: #FFFFFF;
-  --color-bg-soft: #F7F8FB;
-  --color-border: #E5E7EB;
+  --color-blue: #2563EB;
+  --color-blue-dark: #1E40AF;
+  --color-blue-light: #DBEAFE;
+  --color-blue-soft: #F0F7FF;
+
+  --color-navy: #1A2B4F;
+  --color-navy-deep: #0F1B3D;
+
+  --color-text: #1A2B4F;
+  --color-text-muted: #4A5568;
+  --color-text-soft: #6E7B8F;
+
+  --color-bg: #F4F1EC;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #FAF8F4;
+  --color-border: #E8E2DA;
+  --color-border-soft: #F0EBE3;
+
   --color-error: #C62828;
   --color-error-bg: #FEEAEA;
+  --color-success: #00875A;
+  --color-success-bg: #E8F8F0;
 
-  /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Layout */
   --max-width: 1100px;
   --radius: 12px;
   --radius-lg: 16px;
+  --radius-xl: 20px;
 }
 
 html {
@@ -58,8 +67,8 @@ body {
    Header
    ============================================ */
 .header {
-  background: var(--color-navy);
-  color: white;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
   padding: 18px 0;
 }
 
@@ -73,37 +82,39 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
-  color: white;
 }
 
 .logo-mark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--color-accent);
+  width: 38px;
+  height: 38px;
+  background: var(--color-blue);
   color: white;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.5px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .logo-name {
-  font-weight: 600;
-  font-size: 19px;
-  letter-spacing: -0.2px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  color: var(--color-navy);
 }
 
 .header-tag {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.75);
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+  background: var(--color-blue-light);
+  color: var(--color-blue-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
 }
 
 /* ============================================
@@ -111,61 +122,70 @@ body {
    ============================================ */
 .hero {
   padding: 80px 0 60px;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-soft) 100%);
+  background: linear-gradient(135deg, var(--color-blue-soft) 0%, var(--color-bg) 100%);
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 2px;
+.hero-inner {
+  max-width: 900px;
+}
+
+.eyebrow-pill {
+  display: inline-block;
+  background: var(--color-blue-light);
+  color: var(--color-blue-dark);
   font-size: 13px;
-  font-weight: 600;
-  color: var(--color-accent-dark);
-  margin-bottom: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-bottom: 24px;
 }
 
 .hero-title {
-  font-size: clamp(40px, 7vw, 72px);
+  font-size: clamp(44px, 7vw, 76px);
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -1.5px;
+  letter-spacing: -1.8px;
   color: var(--color-navy);
   margin-bottom: 24px;
 }
 
 .accent {
-  color: var(--color-accent);
+  color: var(--color-blue);
 }
 
 .hero-subtitle {
   font-size: clamp(17px, 2vw, 21px);
   color: var(--color-text-muted);
-  max-width: 680px;
+  max-width: 620px;
   margin-bottom: 48px;
+  line-height: 1.6;
 }
 
 /* ============================================
    Signup Card
    ============================================ */
 .signup-card {
-  background: white;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   padding: 36px;
   max-width: 640px;
-  box-shadow: 0 4px 24px rgba(15, 27, 61, 0.06);
+  box-shadow: 0 4px 24px rgba(37, 99, 235, 0.06);
 }
 
 .signup-title {
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 700;
   color: var(--color-navy);
   margin-bottom: 8px;
+  letter-spacing: -0.4px;
 }
 
 .signup-subtitle {
   font-size: 15px;
   color: var(--color-text-muted);
   margin-bottom: 24px;
+  line-height: 1.55;
 }
 
 .signup-form {
@@ -181,6 +201,7 @@ body {
 
 .form-row input {
   flex: 1;
+  min-width: 0;
 }
 
 .signup-form input,
@@ -189,40 +210,44 @@ body {
   padding: 14px 16px;
   font-size: 16px;
   font-family: inherit;
+  font-weight: 500;
   color: var(--color-text);
-  background: var(--color-bg-soft);
+  background: var(--color-surface-soft);
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius);
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .signup-form input:focus,
 .signup-form select:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-blue);
   background: white;
+  box-shadow: 0 0 0 3px var(--color-blue-light);
 }
 
 .signup-form input::placeholder {
-  color: #999;
+  color: #9CA3AF;
 }
 
 .btn-primary {
-  background: var(--color-accent);
+  background: var(--color-blue);
   color: white;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 16px 24px;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+  transition: background 0.15s ease, transform 0.1s ease, opacity 0.15s ease, box-shadow 0.15s ease;
   font-family: inherit;
   margin-top: 4px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-blue-dark);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary:active {
@@ -237,9 +262,9 @@ body {
 .signup-success {
   margin-top: 16px;
   padding: 14px 16px;
-  background: #E8F8F0;
-  color: var(--color-accent-dark);
-  font-weight: 500;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-weight: 600;
   border-radius: var(--radius);
   font-size: 15px;
 }
@@ -249,53 +274,69 @@ body {
   padding: 14px 16px;
   background: var(--color-error-bg);
   color: var(--color-error);
-  font-weight: 500;
+  font-weight: 600;
   border-radius: var(--radius);
   font-size: 15px;
 }
 
 /* ============================================
-   How It Works Section
+   How It Works
    ============================================ */
 .how-it-works {
   padding: 80px 0;
-  background: white;
+  background: var(--color-bg);
 }
 
 .section-title {
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 700;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
   color: var(--color-navy);
   margin-bottom: 48px;
   text-align: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.8px;
 }
 
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .step-card {
-  background: var(--color-bg-soft);
-  border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+}
+
+.step-card-dark {
+  background: var(--color-blue);
+  border-color: var(--color-blue);
 }
 
 .step-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--color-navy);
-  color: white;
-  font-weight: 700;
-  font-size: 18px;
-  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  background: var(--color-blue-light);
+  color: var(--color-blue-dark);
+  font-weight: 800;
+  font-size: 19px;
+  border-radius: 12px;
   margin-bottom: 20px;
+}
+
+.step-number-light {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 .step-title {
@@ -303,6 +344,11 @@ body {
   font-weight: 700;
   color: var(--color-navy);
   margin-bottom: 12px;
+  letter-spacing: -0.4px;
+}
+
+.step-title-light {
+  color: white;
 }
 
 .step-text {
@@ -311,12 +357,16 @@ body {
   line-height: 1.65;
 }
 
+.step-text-light {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 /* ============================================
-   Built For Section
+   Built For
    ============================================ */
 .built-for {
   padding: 80px 0;
-  background: var(--color-bg-soft);
+  background: var(--color-surface);
 }
 
 .built-for-list {
@@ -330,9 +380,10 @@ body {
 
 .built-for-list li {
   position: relative;
-  padding-left: 28px;
+  padding-left: 32px;
   font-size: 17px;
-  color: var(--color-text);
+  font-weight: 500;
+  color: var(--color-navy);
 }
 
 .built-for-list li::before {
@@ -340,16 +391,23 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--color-accent);
-  font-weight: 700;
-  font-size: 18px;
+  width: 22px;
+  height: 22px;
+  background: var(--color-blue-light);
+  color: var(--color-blue-dark);
+  font-weight: 800;
+  font-size: 13px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ============================================
    Footer
    ============================================ */
 .footer {
-  background: var(--color-navy);
+  background: var(--color-navy-deep);
   color: rgba(255, 255, 255, 0.85);
   padding: 32px 0;
 }
@@ -364,13 +422,14 @@ body {
 
 .footer-text {
   font-size: 14px;
+  font-weight: 500;
 }
 
 .footer-tag {
   font-size: 14px;
-  font-weight: 600;
-  color: var(--color-accent);
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: var(--color-blue-light);
+  letter-spacing: 0.3px;
 }
 
 /* ============================================
