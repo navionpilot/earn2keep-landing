@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Earn2Keep — The fundraiser where participants actually earn it. Verified challenges, sponsor-funded entries, and real prizes for the winners. Coming soon." />
+  <meta name="theme-color" content="#0F1B3D" />
+
+  <!-- Open Graph (for sharing on social media) -->
+  <meta property="og:title" content="Earn2Keep — Earn It. Keep It." />
+  <meta property="og:description" content="The fundraiser where participants actually earn it. Coming soon." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://earn2keep.com" />
+
+  <title>Earn2Keep — Earn It. Keep It.</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top brand bar -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Earn2Keep home">
+        <span class="logo-mark">E2K</span>
+        <span class="logo-name">Earn2Keep</span>
+      </a>
+      <span class="header-tag">Coming Soon</span>
+    </div>
+  </header>
+
+  <!-- Hero / main message -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">A new kind of team fundraiser</p>
+        <h1 class="hero-title">
+          Earn It. <span class="accent">Keep It.</span>
+        </h1>
+        <p class="hero-subtitle">
+          The fundraising platform where players, scouts, and youth groups actually
+          earn their gear, mission trips, and equipment through verified challenges —
+          not by selling cookie dough.
+        </p>
+
+        <!-- Email signup -->
+        <div class="signup-card">
+          <h2 class="signup-title">Be the first to know when we launch</h2>
+          <p class="signup-subtitle">
+            Coaches, parents, youth pastors, and team leaders — sign up to get early access
+            and be among the first organizations to run an Earn2Keep season.
+          </p>
+
+          <form id="signup-form" class="signup-form" onsubmit="handleSignup(event)">
+            <div class="form-row">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+                aria-label="Your name"
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                required
+                aria-label="Your email"
+              />
+            </div>
+            <select id="role" name="role" required aria-label="Your role">
+              <option value="">I am a... (select one)</option>
+              <option value="coach">Coach</option>
+              <option value="parent">Parent</option>
+              <option value="youth-pastor">Youth pastor / Church leader</option>
+              <option value="club-admin">Club / school administrator</option>
+              <option value="gym-owner">Gym owner / fitness coach</option>
+              <option value="scout-leader">Scout leader</option>
+              <option value="other">Other</option>
+            </select>
+            <button type="submit" class="btn-primary">Notify me at launch</button>
+          </form>
+
+          <p id="signup-success" class="signup-success" hidden>
+            Thanks — we've got you on the list. You'll hear from us soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works section -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How Earn2Keep works</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Compete</h3>
+            <p class="step-text">
+              Teams and groups register for a 4–6 week Camp or Tournament.
+              Players take on weekly challenges that prove real skill and effort.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Get sponsored</h3>
+            <p class="step-text">
+              Family, friends, and local businesses scan a QR code to fund a player's entry.
+              No cookie dough. No knocking on doors. Just real support for real effort.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Earn the win</h3>
+            <p class="step-text">
+              Top performers win prizes. The team or organization keeps the rest —
+              gear, uniforms, mission trips, and equipment, all earned, not begged for.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built for section -->
+    <section class="built-for">
+      <div class="container">
+        <h2 class="section-title">Built for every group that needs to fundraise</h2>
+        <ul class="built-for-list">
+          <li>Soccer, basketball, and football teams</li>
+          <li>Travel and club sports</li>
+          <li>Church youth groups and Bible study groups</li>
+          <li>Scouts and 4-H clubs</li>
+          <li>Fitness gyms and CrossFit boxes</li>
+          <li>School clubs and organizations</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-text">© 2026 Earn2Keep. All rights reserved.</p>
+      <p class="footer-tag">Earn it. Keep it.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
