@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#1A2B4F"/>
-  <text x="32" y="44" font-family="-apple-system, Arial, sans-serif" font-size="36" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">e</text>
-  <text x="46" y="32" font-family="-apple-system, Arial, sans-serif" font-size="16" font-weight="900" fill="#2563EB" text-anchor="middle">2</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a1f24"/>
+      <stop offset="100%" stop-color="#041418"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <text x="22" y="44" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="36" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-2">e</text>
+  <text x="42" y="32" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="20" font-weight="900" fill="#ff755f" text-anchor="middle">2</text>
+  <text x="50" y="44" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="36" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-2">k</text>
 </svg>
