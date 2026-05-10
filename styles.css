@@ -822,17 +822,83 @@ section[id] {
 }
 
 /* Pricing cards reuse .event-card base; these add cyan/coral accents */
-.pricing-free::before {
+.pricing-camp::before {
   background: linear-gradient(90deg, transparent, var(--e2k-cyan), transparent);
 }
-.pricing-free .event-type                  { color: var(--e2k-cyan); }
-.pricing-free .event-features li::before   { background: var(--e2k-cyan); }
+.pricing-camp .event-type                  { color: var(--e2k-cyan); }
+.pricing-camp .pricing-features li::before {
+  background: rgba(53, 213, 223, 0.15);
+  border-color: rgba(53, 213, 223, 0.45);
+}
+.pricing-camp .pricing-features li::after  { color: var(--e2k-cyan); }
 
-.pricing-paid::before {
+.pricing-tournament::before {
   background: linear-gradient(90deg, transparent, var(--e2k-coral), transparent);
 }
-.pricing-paid .event-type                  { color: var(--e2k-coral); }
-.pricing-paid .event-features li::before   { background: var(--e2k-coral); }
+.pricing-tournament .event-type                  { color: var(--e2k-coral); }
+.pricing-tournament .pricing-features li::before {
+  background: rgba(255, 117, 95, 0.15);
+  border-color: rgba(255, 117, 95, 0.45);
+}
+.pricing-tournament .pricing-features li::after  { color: var(--e2k-coral); }
+
+/* Big price display */
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0.5rem 0 0.85rem;
+  flex-wrap: wrap;
+}
+.pricing-price-amount {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: var(--e2k-text);
+  line-height: 1;
+}
+.pricing-price-period {
+  font-size: 1rem;
+  color: var(--e2k-text-dim);
+  font-weight: 600;
+}
+
+/* Checkmark feature list (pricing-only — distinct from event-features dot bullets) */
+.pricing-features {
+  list-style: none;
+  margin: 0 0 1.85rem;
+  padding: 0;
+  flex-grow: 1;
+}
+.pricing-features li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.7rem;
+  color: var(--e2k-text-dim);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.pricing-features li:last-child { margin-bottom: 0; }
+.pricing-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.32em;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid;
+  border-radius: 50%;
+}
+.pricing-features li::after {
+  content: "✓";
+  position: absolute;
+  left: 4px;
+  top: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+}
 
 .pricing-note {
   margin: 0;

@@ -29,35 +29,32 @@ The marketing site at **earn2keep.com**. Static HTML/CSS — no build step, no f
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.11)
+## Pricing (locked — Slice 6.12)
 
-Everything from 6.10 plus header navigation. The sticky header now has 5 jump-links across the top:
+| Event type | Per-event fee | Plus |
+|---|---|---|
+| Camp (single team) | **$149** | 3.5% transaction & hosting fee on funds raised |
+| Tournament (multi-team) | **$299** | 3.5% transaction & hosting fee on funds raised |
 
-- **How it works** → `#how-it-works`
-- **Organizers** → `#organizers`
-- **Players** → `#players`
-- **Sponsors** → `#sponsors`
-- **Pricing** → `#pricing`
+Account setup, event drafting, and exploring the platform are free. The flat fee is charged at event launch; the 3.5% covers payment processing on funds that flow through the platform.
 
-Click any of them and the page smoothly scrolls to that section. Sections have `scroll-margin-top: 90px` so the sticky header doesn't cover the section title when you land.
+### Camps include
+Registration · Challenge tracking · Sponsor pages · Leaderboards · Messaging · Live progress tracking · 30-day event hosting
 
-The "What is earn²keep?" section (the value prop with "Three roles, one simple loop") is intentionally not in the header nav — it sits right under the hero, so visitors will see it without needing a jump-link.
+### Tournaments include
+Team registration · Event dashboards · Challenge tracking · Fundraising tools · Sponsor visibility · Leaderboards · 30-day event hosting
 
-### Header layout
+---
 
-```
-[ logo ] —— [ How it works · Organizers · Players · Sponsors · Pricing ] —— [ Sign in ] [ Sign up free → ]
-```
+## What's currently on the page (Phase 6 / Slice 6.12)
 
-Three zones using flex space-between: logo left, page nav center, auth actions right.
+Page structure unchanged from 6.11. Slice 6.12 updates:
 
-### Responsive behavior
+1. **Pricing section** rewritten with the locked $149 / $299 pricing structure. Camps card has cyan accents (matches the Camp event-card in How it works); Tournaments card has coral. Features use checkmark bullets (the SaaS pricing-page convention) instead of dot bullets.
 
-- **> 980px** — full header (logo + nav + Sign in + Sign up free)
-- **640–980px** — header nav links hidden, but Sign in + Sign up free still visible
-- **< 640px** — header nav links + Sign in hidden, only logo + Sign up free remain
+2. **Closing CTA copy** updated — old line *"Free to set up. Free to run. Pay only when sponsors come through."* was inaccurate now that there's a per-event fee. New line: *"Set up your account free. $149 to launch your first Camp."*
 
-Mobile/tablet visitors navigate via the **footer link grid**, which has the same six section links plus more.
+3. **Hero "Sign up free" CTAs unchanged.** Account creation is still genuinely free; the per-event fee only kicks in at event launch. Header, hero, and inline CTAs all keep the "Sign up free" button text.
 
 ---
 
@@ -71,13 +68,14 @@ Mobile/tablet visitors navigate via the **footer link grid**, which has the same
 | 6.3 | "For Players" section | ✅ Done |
 | 6.4 | "For Sponsors" section | ✅ Done |
 | 6.5 | "How it works" — Camp + Tournament | ✅ Done |
-| 6.6 | Pricing | ✅ Done |
+| 6.6 | Pricing (placeholder) | ✅ Done |
 | 6.7 | Sign-up CTAs throughout | ✅ Done |
 | 6.8 | SEO metadata, sitemap, OG image | ✅ Done |
 | 6.8.1 | Copy refinement: drop "not begged for" | ✅ Done |
 | 6.10 | Visual refresh: bento hero, pill eyebrows, gradient badges, CTA box | ✅ Done |
-| **6.11** | Header navigation links | ✅ Done |
-| 6.9 | "Sign in" link polish | ⏳ Next (last in Phase 6) |
+| 6.11 | Header navigation links | ✅ Done |
+| **6.12** | Real pricing ($149 Camps / $299 Tournaments) | ✅ Done |
+| 6.9 | "Sign in" link polish | ⏳ Last slice in Phase 6 |
 
 ---
 
