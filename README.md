@@ -11,8 +11,11 @@ The marketing site at **earn2keep.com**. Static HTML/CSS — no build step, no f
 - `index.html` — the page itself
 - `styles.css` — all styling
 - `favicon.svg` — browser tab icon
+- `og-image.png` — social share preview (1200×630)
+- `robots.txt` — search engine crawl directives
+- `sitemap.xml` — URL index for search engines
 
-That's the whole site. No build step, no `node_modules`, no JavaScript framework. Drop the files in, push to `main`, Vercel handles the rest.
+That's the whole site. No build step, no `node_modules`, no JavaScript framework.
 
 ---
 
@@ -32,40 +35,15 @@ Brand tokens live in `styles.css` under `:root`. Change them there if the brand 
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.7)
+## What's currently on the page (Phase 6 / Slice 6.8.1)
 
-What ships in Slice 6.7 (inline CTAs, on top of all prior 6.x slices):
+Page layout and design unchanged from 6.8 — the only changes here are copy:
 
-- Top status ticker
-- Sticky header with **Sign in** and **Sign up free** CTAs
-- Hero with **Sign up free** + "What is earn²keep?" CTAs
-- "Three roles. One simple loop." value prop section
-- For Organizers section + **inline Sign up free CTA**
-- For Players section
-- For Sponsors section
-- How it works section + **inline Sign up free CTA**
-- Pricing section
-- Closing CTA strip
-- 4-column footer
+- The phrase **"Fundraising that's earned, not begged for."** has been replaced everywhere with **"Fundraising you actually earn."**
+- Affected places: hero H1, page title, meta description, OG title, OG image alt text, Twitter title, JSON-LD WebSite description, and the OG image itself
+- The italic coral accent word in the hero shifts from **earned** → **actually** (which is the differentiator word in the new phrase)
 
-### CTA inventory (everything pointing to `app.earn2keep.com/signup`)
-
-| Location | Style | Tagline / context |
-|---|---|---|
-| Sticky header | `.btn-sm` (small) | "Sign up free →" |
-| Hero | `.btn-lg` (large) | "Sign up free →" + "What is earn²keep?" secondary |
-| **End of For Organizers (NEW)** | `.btn` (default) | *"Ready to run your first event?"* |
-| **End of How it works (NEW)** | `.btn` (default) | *"Pick your format and start."* |
-| Closing CTA strip | `.btn-lg` (large) | "Ready to run your first Camp?" + "Sign up free →" |
-| Footer | text link | "Sign up free" in Get Started column |
-
-The inline CTAs are deliberately quieter than the closing strip (no card, no background, just a centered tagline + button) so they read as "convert here if you're ready" rather than competing with the closing strip's main act.
-
-### Why no inline CTA on For Players, For Sponsors, or Pricing
-
-- **For Players:** players don't sign up themselves; they're invited by an organizer
-- **For Sponsors:** sponsors arrive via QR code / share link, not signup
-- **Pricing:** the closing CTA strip is right after — would be two CTAs back-to-back
+The brand tagline ("Earn it. Keep it.") is unchanged — that's the locked slogan.
 
 ---
 
@@ -80,9 +58,10 @@ The inline CTAs are deliberately quieter than the closing strip (no card, no bac
 | 6.4 | "For Sponsors" section | ✅ Done |
 | 6.5 | "How it works" — Camp + Tournament | ✅ Done |
 | 6.6 | Pricing | ✅ Done |
-| **6.7** | Sign-up CTAs throughout | ✅ Done |
-| 6.8 | SEO metadata, sitemap, OG images | ⏳ Next |
-| 6.9 | "Sign in" link polish | ⏳ |
+| 6.7 | Sign-up CTAs throughout | ✅ Done |
+| 6.8 | SEO metadata, sitemap, OG image | ✅ Done |
+| **6.8.1** | Copy refinement: drop "not begged for" framing | ✅ Done |
+| 6.9 | "Sign in" link polish | ⏳ Next (last in Phase 6) |
 
 ---
 
