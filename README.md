@@ -32,30 +32,31 @@ Brand tokens live in `styles.css` under `:root`. Change them there if the brand 
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.2)
+## What's currently on the page (Phase 6 / Slice 6.3)
 
-What ships in Slice 6.2 (For Organizers section, on top of 6.1 + 6.1.1):
+What ships in Slice 6.3 (For Players section, on top of 6.1 + 6.1.1 + 6.2):
 
 - Top status ticker
 - Sticky header with **Sign in** and **Sign up free** CTAs
 - Hero with the "What is earn²keep?" framing
 - "Three roles. One simple loop." value prop section (Organizers / Participants / Sponsors)
-- **NEW: For Organizers section** — 8-role grid + "The organizer playbook" 4-step flow
+- For Organizers section — 8-role grid + "The organizer playbook" 4-step flow
+- **NEW: For Players section** — 4-card "What you earn" + "Your day" 4-step flow
 - Closing CTA strip
 - 4-column footer with bottom copyright bar
 
-The For Organizers section now has `id="organizers"`, so the **For Organizers** link in the footer activates and smoothly scrolls to it.
+The For Players section now has `id="players"`, so the **For Players** link in the footer activates and smoothly scrolls to it.
 
 ### Footer link status
 
 | Link | Anchor | Status |
 |---|---|---|
 | What is earn²keep? | `#what-is-earn2keep` | ✅ Active (shipped 6.1) |
-| **For Organizers** | `#organizers` | ✅ **Active (shipped 6.2)** |
+| For Organizers | `#organizers` | ✅ Active (shipped 6.2) |
+| **For Players** | `#players` | ✅ **Active (shipped 6.3)** |
+| For Sponsors | `#sponsors` | ⏳ Activates in Slice 6.4 |
 | How it works | `#how-it-works` | ⏳ Activates in Slice 6.5 |
 | Pricing | `#pricing` | ⏳ Activates in Slice 6.6 |
-| For Players | `#players` | ⏳ Activates in Slice 6.3 |
-| For Sponsors | `#sponsors` | ⏳ Activates in Slice 6.4 |
 
 ---
 
@@ -65,9 +66,9 @@ The For Organizers section now has `id="organizers"`, so the **For Organizers** 
 |---|---|---|
 | 6.1 | Hero + value prop + chrome | ✅ Done |
 | 6.1.1 | Header/footer polish + readability bumps | ✅ Done |
-| **6.2** | "For Organizers" section (8 roles + playbook) | ✅ Done |
-| 6.3 | "For Players / Participants" section | ⏳ Next |
-| 6.4 | "For Sponsors" section | ⏳ |
+| 6.2 | "For Organizers" section (8 roles + playbook) | ✅ Done |
+| **6.3** | "For Players" section (benefits + your day) | ✅ Done |
+| 6.4 | "For Sponsors" section | ⏳ Next |
 | 6.5 | "How it works" — Camp + Tournament explained | ⏳ |
 | 6.6 | Pricing | ⏳ |
 | 6.7 | Sign-up CTAs throughout | ⏳ |
