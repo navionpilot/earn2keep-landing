@@ -32,38 +32,40 @@ Brand tokens live in `styles.css` under `:root`. Change them there if the brand 
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.6)
+## What's currently on the page (Phase 6 / Slice 6.7)
 
-What ships in Slice 6.6 (Pricing section, on top of 6.1 + 6.1.1 + 6.2 + 6.3 + 6.4 + 6.5):
+What ships in Slice 6.7 (inline CTAs, on top of all prior 6.x slices):
 
 - Top status ticker
 - Sticky header with **Sign in** and **Sign up free** CTAs
-- Hero with the "What is earn²keep?" framing
+- Hero with **Sign up free** + "What is earn²keep?" CTAs
 - "Three roles. One simple loop." value prop section
-- For Organizers section
+- For Organizers section + **inline Sign up free CTA**
 - For Players section
 - For Sponsors section
-- How it works section (Camp + Tournament)
-- **NEW: Pricing section** — Free setup vs. small percentage when sponsors pay
+- How it works section + **inline Sign up free CTA**
+- Pricing section
 - Closing CTA strip
 - 4-column footer
 
-The Pricing section now has `id="pricing"`, so the **Pricing** link in the footer activates. **All footer links are now live.** No placeholder anchors remain.
+### CTA inventory (everything pointing to `app.earn2keep.com/signup`)
 
-### Footer link status
-
-| Link | Anchor | Status |
+| Location | Style | Tagline / context |
 |---|---|---|
-| What is earn²keep? | `#what-is-earn2keep` | ✅ Active |
-| How it works | `#how-it-works` | ✅ Active |
-| **Pricing** | `#pricing` | ✅ **Active (shipped 6.6)** |
-| For Organizers | `#organizers` | ✅ Active |
-| For Players | `#players` | ✅ Active |
-| For Sponsors | `#sponsors` | ✅ Active |
+| Sticky header | `.btn-sm` (small) | "Sign up free →" |
+| Hero | `.btn-lg` (large) | "Sign up free →" + "What is earn²keep?" secondary |
+| **End of For Organizers (NEW)** | `.btn` (default) | *"Ready to run your first event?"* |
+| **End of How it works (NEW)** | `.btn` (default) | *"Pick your format and start."* |
+| Closing CTA strip | `.btn-lg` (large) | "Ready to run your first Camp?" + "Sign up free →" |
+| Footer | text link | "Sign up free" in Get Started column |
 
-### Note on the pricing percentage
+The inline CTAs are deliberately quieter than the closing strip (no card, no background, just a centered tagline + button) so they read as "convert here if you're ready" rather than competing with the closing strip's main act.
 
-The exact platform percentage is intentionally not shown — it ships when Phase 8 (Stripe payments) ships and the percentage is locked in. The pricing card explicitly notes "Exact percentage announced before public launch." When the percentage is decided, a small follow-up slice will drop the number in.
+### Why no inline CTA on For Players, For Sponsors, or Pricing
+
+- **For Players:** players don't sign up themselves; they're invited by an organizer
+- **For Sponsors:** sponsors arrive via QR code / share link, not signup
+- **Pricing:** the closing CTA strip is right after — would be two CTAs back-to-back
 
 ---
 
@@ -77,9 +79,9 @@ The exact platform percentage is intentionally not shown — it ships when Phase
 | 6.3 | "For Players" section | ✅ Done |
 | 6.4 | "For Sponsors" section | ✅ Done |
 | 6.5 | "How it works" — Camp + Tournament | ✅ Done |
-| **6.6** | Pricing | ✅ Done |
-| 6.7 | Sign-up CTAs throughout | ⏳ Next |
-| 6.8 | SEO metadata, sitemap, OG images | ⏳ |
+| 6.6 | Pricing | ✅ Done |
+| **6.7** | Sign-up CTAs throughout | ✅ Done |
+| 6.8 | SEO metadata, sitemap, OG images | ⏳ Next |
 | 6.9 | "Sign in" link polish | ⏳ |
 
 ---
