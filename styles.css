@@ -654,6 +654,37 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.5;
 }
 
+/* ---------- Pricing ---------- */
+.pricing-section {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background: var(--e2k-bg-2);
+  border-top: 1px solid var(--e2k-border);
+  position: relative;
+}
+
+/* Pricing cards reuse .event-card base; these add cyan/coral accents */
+.pricing-free::before {
+  background: linear-gradient(90deg, transparent, var(--e2k-cyan), transparent);
+}
+.pricing-free .event-type                  { color: var(--e2k-cyan); }
+.pricing-free .event-features li::before   { background: var(--e2k-cyan); }
+
+.pricing-paid::before {
+  background: linear-gradient(90deg, transparent, var(--e2k-coral), transparent);
+}
+.pricing-paid .event-type                  { color: var(--e2k-coral); }
+.pricing-paid .event-features li::before   { background: var(--e2k-coral); }
+
+.pricing-note {
+  margin: 0;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--e2k-border);
+  font-size: 0.92rem;
+  color: var(--e2k-text-muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
 /* ---------- Closing CTA strip ---------- */
 .cta-strip {
   padding: clamp(3.5rem, 7vw, 5.5rem) 0;

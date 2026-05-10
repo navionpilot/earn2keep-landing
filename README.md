@@ -32,9 +32,9 @@ Brand tokens live in `styles.css` under `:root`. Change them there if the brand 
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.5)
+## What's currently on the page (Phase 6 / Slice 6.6)
 
-What ships in Slice 6.5 (How it works section, on top of 6.1 + 6.1.1 + 6.2 + 6.3 + 6.4):
+What ships in Slice 6.6 (Pricing section, on top of 6.1 + 6.1.1 + 6.2 + 6.3 + 6.4 + 6.5):
 
 - Top status ticker
 - Sticky header with **Sign in** and **Sign up free** CTAs
@@ -43,24 +43,27 @@ What ships in Slice 6.5 (How it works section, on top of 6.1 + 6.1.1 + 6.2 + 6.3
 - For Organizers section
 - For Players section
 - For Sponsors section
-- **NEW: How it works section** — Camp vs Tournament side-by-side comparison
+- How it works section (Camp + Tournament)
+- **NEW: Pricing section** — Free setup vs. small percentage when sponsors pay
 - Closing CTA strip
 - 4-column footer
 
-The How it works section now has `id="how-it-works"`, so the **How it works** link in the footer activates and smoothly scrolls to it.
+The Pricing section now has `id="pricing"`, so the **Pricing** link in the footer activates. **All footer links are now live.** No placeholder anchors remain.
 
 ### Footer link status
 
 | Link | Anchor | Status |
 |---|---|---|
-| What is earn²keep? | `#what-is-earn2keep` | ✅ Active (shipped 6.1) |
-| **How it works** | `#how-it-works` | ✅ **Active (shipped 6.5)** |
-| Pricing | `#pricing` | ⏳ Activates in Slice 6.6 |
-| For Organizers | `#organizers` | ✅ Active (shipped 6.2) |
-| For Players | `#players` | ✅ Active (shipped 6.3) |
-| For Sponsors | `#sponsors` | ✅ Active (shipped 6.4) |
+| What is earn²keep? | `#what-is-earn2keep` | ✅ Active |
+| How it works | `#how-it-works` | ✅ Active |
+| **Pricing** | `#pricing` | ✅ **Active (shipped 6.6)** |
+| For Organizers | `#organizers` | ✅ Active |
+| For Players | `#players` | ✅ Active |
+| For Sponsors | `#sponsors` | ✅ Active |
 
-Only **Pricing** remains as a placeholder anchor.
+### Note on the pricing percentage
+
+The exact platform percentage is intentionally not shown — it ships when Phase 8 (Stripe payments) ships and the percentage is locked in. The pricing card explicitly notes "Exact percentage announced before public launch." When the percentage is decided, a small follow-up slice will drop the number in.
 
 ---
 
@@ -70,12 +73,12 @@ Only **Pricing** remains as a placeholder anchor.
 |---|---|---|
 | 6.1 | Hero + value prop + chrome | ✅ Done |
 | 6.1.1 | Header/footer polish + readability bumps | ✅ Done |
-| 6.2 | "For Organizers" section (8 roles + playbook) | ✅ Done |
-| 6.3 | "For Players" section (benefits + your day) | ✅ Done |
-| 6.4 | "For Sponsors" section (benefits + how it works) | ✅ Done |
-| **6.5** | "How it works" — Camp + Tournament explained | ✅ Done |
-| 6.6 | Pricing | ⏳ Next |
-| 6.7 | Sign-up CTAs throughout | ⏳ |
+| 6.2 | "For Organizers" section | ✅ Done |
+| 6.3 | "For Players" section | ✅ Done |
+| 6.4 | "For Sponsors" section | ✅ Done |
+| 6.5 | "How it works" — Camp + Tournament | ✅ Done |
+| **6.6** | Pricing | ✅ Done |
+| 6.7 | Sign-up CTAs throughout | ⏳ Next |
 | 6.8 | SEO metadata, sitemap, OG images | ⏳ |
 | 6.9 | "Sign in" link polish | ⏳ |
 
