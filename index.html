@@ -3,204 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="earn²keep — The fundraising platform where teams compete in verified challenges and keep what they earn. Earn it. Keep it." />
+  <meta name="description" content="earn²keep is a platform where any group — sports, scouts, schools, churches, gyms, clubs — runs a Camp or Tournament built on verified effort. Participants do the work. Sponsors back what's real. Everyone keeps what they earn." />
   <meta name="theme-color" content="#041418" />
 
-  <meta property="og:title" content="earn²keep — Earn it. Keep it." />
-  <meta property="og:description" content="The fundraising platform where teams actually earn it." />
+  <meta property="og:title" content="earn²keep — Fundraising that's earned, not begged for" />
+  <meta property="og:description" content="A platform where any group runs a Camp or Tournament built on verified effort. Earn it. Keep it." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://earn2keep.com" />
 
-  <title>earn²keep — Earn it. Keep it.</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="earn²keep — Fundraising that's earned, not begged for" />
+  <meta name="twitter:description" content="A platform where any group runs a Camp or Tournament built on verified effort. Earn it. Keep it." />
+
+  <title>earn²keep — Fundraising that's earned, not begged for</title>
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="ticker-bar">
+  <!-- TOP TICKER -->
+  <div class="ticker" role="status" aria-label="Site status">
     <div class="ticker-inner">
-      <span class="ticker-live">Early Access</span>
-      <span>Be the first to launch a Camp</span>
-      <span>·</span>
-      <span>Built for sports, scouts, faith groups, and fitness teams</span>
+      <span class="ticker-dot" aria-hidden="true"></span>
+      <span><strong>earn²keep is live.</strong>&nbsp;&nbsp;Run a Camp or Tournament built on verified effort.</span>
     </div>
   </div>
 
-  <header class="header">
-    <div class="container header-inner">
-      <a href="/" class="logo" aria-label="earn2keep home">
-        <span class="logo-text">earn<sup class="logo-sup">2</sup>keep</span>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="/" aria-label="earn²keep home">
+        <span class="logo-mark">earn<sup>2</sup>keep</span>
       </a>
-      <a href="#signup" class="header-cta">Get early access</a>
+      <nav class="header-nav" aria-label="Primary">
+        <a class="header-signin" href="https://app.earn2keep.com/login">Sign in</a>
+        <a class="btn btn-primary btn-sm" href="https://app.earn2keep.com/signup">
+          Sign up free<span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-inner">
-        <span class="eyebrow">★ A new kind of team fundraiser ★</span>
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <span class="eyebrow">★&nbsp;&nbsp;Earn it. Keep it.&nbsp;&nbsp;★</span>
         <h1 class="hero-title">
-          The Fundraiser<br>
-          That <span class="accent">Earns It.</span>
+          Fundraising that's<br />
+          <span class="accent">earned,</span> not begged for.
         </h1>
         <p class="hero-subtitle">
-          Teams, schools, and youth groups compete in verified challenges.
-          Sponsors fund real effort. Everyone keeps what they earn.
-          No cookie dough. No begging. Just earned.
+          earn²keep is a platform where any group — sports, scouts, schools, churches, gyms, clubs — runs a Camp or Tournament built on verified effort. Participants do the work. Sponsors back what's real. Everyone keeps what they earn.
         </p>
         <div class="hero-actions">
-          <a href="#signup" class="btn-primary">Get Early Access →</a>
-          <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+          <a class="btn btn-primary btn-lg" href="https://app.earn2keep.com/signup">
+            Sign up free<span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="#what-is-earn2keep">
+            What is earn²keep?
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="scoreboard">
+    <!-- VALUE PROP -->
+    <section id="what-is-earn2keep" class="value-prop">
       <div class="container">
-        <div class="scoreboard-grid">
-          <div class="score-cell">
-            <div class="score-label">VERTICALS</div>
-            <div class="score-value">10+</div>
-            <div class="score-sub">Sports · Scouts · Faith</div>
-          </div>
-          <div class="score-cell">
-            <div class="score-label">FORMAT</div>
-            <div class="score-value">4–6</div>
-            <div class="score-sub">Week Camps</div>
-          </div>
-          <div class="score-cell">
-            <div class="score-label">TARGET</div>
-            <div class="score-value accent">$5K+</div>
-            <div class="score-sub">Per Team Avg</div>
-          </div>
-          <div class="score-cell">
-            <div class="score-label">LAUNCHING</div>
-            <div class="score-value">2026</div>
-            <div class="score-sub">Summer Season</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="how-it-works" class="how-it-works">
-      <div class="container">
-        <h2 class="section-title">How <span class="accent">earn²keep</span> works</h2>
-        <p class="section-subtitle">A 4–6 week season. Real challenges. Real sponsors. Real earnings.</p>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Compete</h3>
-            <p class="step-text">
-              Teams register for a Camp or Tournament. Players take on weekly
-              challenges that prove real skill, fitness, faith, or service work —
-              verified by their coach.
-            </p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <h3 class="step-title">Get Sponsored</h3>
-            <p class="step-text">
-              Family, friends, and local businesses scan a player's QR code to fund
-              their entry. Sponsors see real verified work — not just a fundraising
-              ask.
-            </p>
-          </div>
-          <div class="step-card step-card-dark">
-            <div class="step-number step-number-light">03</div>
-            <h3 class="step-title step-title-light">Keep the Win</h3>
-            <p class="step-text step-text-light">
-              Top performers win prizes. The team or organization keeps the rest —
-              gear, mission trips, equipment, uniforms. All earned, not begged for.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="built-for">
-      <div class="container">
-        <h2 class="section-title">Built for every group<br>that needs to fundraise</h2>
-        <p class="section-subtitle">From soccer fields to scout troops, gyms to youth groups.</p>
-        <ul class="built-for-list">
-          <li><span class="check">✓</span>Soccer, basketball, and football teams</li>
-          <li><span class="check">✓</span>Travel and club sports</li>
-          <li><span class="check">✓</span>Church youth groups and Bible study groups</li>
-          <li><span class="check">✓</span>Scouts and 4-H clubs</li>
-          <li><span class="check">✓</span>Fitness gyms and CrossFit boxes</li>
-          <li><span class="check">✓</span>School clubs and organizations</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="signup" class="signup-section">
-      <div class="container">
-        <div class="signup-card">
-          <span class="eyebrow eyebrow-light">★ Early Access ★</span>
-          <h2 class="signup-title">Be the first to<br>launch a Camp.</h2>
-          <p class="signup-subtitle">
-            Coaches, parents, youth pastors, and team leaders — sign up to get early
-            access and be among the first organizations to run an earn²keep season.
+        <div class="section-head">
+          <span class="eyebrow">What is earn²keep?</span>
+          <h2 class="section-title">Three roles. One simple loop.</h2>
+          <p class="section-lede">
+            A Camp runs four to six weeks. Each day, participants take on a challenge with video proof. Sponsors back the effort. Top performers win prizes. The group keeps what's earned.
           </p>
+        </div>
 
-          <form id="signup-form" class="signup-form">
-            <div class="form-row">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                required
-                aria-label="Your name"
-              />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email"
-                required
-                aria-label="Your email"
-              />
-            </div>
-            <select id="role" name="role" required aria-label="Your role">
-              <option value="">I am a... (select one)</option>
-              <option value="coach">Coach</option>
-              <option value="parent">Parent</option>
-              <option value="youth-pastor">Youth pastor / Church leader</option>
-              <option value="club-admin">Club / school administrator</option>
-              <option value="gym-owner">Gym owner / fitness coach</option>
-              <option value="scout-leader">Scout leader</option>
-              <option value="other">Other</option>
-            </select>
-            <button type="submit" id="signup-btn" class="btn-primary btn-full">
-              Notify Me at Launch →
-            </button>
-          </form>
+        <div class="role-grid">
 
-          <p id="signup-success" class="signup-success" hidden></p>
-          <p id="signup-error" class="signup-error" hidden></p>
+          <article class="role-card">
+            <span class="role-num">01</span>
+            <h3 class="role-title">Organizers</h3>
+            <p class="role-text">
+              Coaches, teachers, scout leaders, parents, youth pastors, gym owners, org directors — anyone who leads a group. Set up a Camp or Tournament in minutes.
+            </p>
+          </article>
+
+          <article class="role-card">
+            <span class="role-num">02</span>
+            <h3 class="role-title">Participants</h3>
+            <p class="role-text">
+              Show up. Do the daily challenge. Post the video. Climb the leaderboard. Hit the goal. Earn the prize.
+            </p>
+          </article>
+
+          <article class="role-card">
+            <span class="role-num">03</span>
+            <h3 class="role-title">Sponsors</h3>
+            <p class="role-text">
+              Back someone you believe in. See real verified work. Know your dollars went somewhere real — not into a cookie-dough catalog.
+            </p>
+          </article>
+
         </div>
       </div>
     </section>
+
+    <!-- CLOSING CTA -->
+    <section class="cta-strip">
+      <div class="container cta-strip-inner">
+        <div class="cta-strip-text">
+          <h2>Ready to run your first Camp?</h2>
+          <p>Set up an organization, invite your group, and see how it works.</p>
+        </div>
+        <a class="btn btn-primary btn-lg" href="https://app.earn2keep.com/signup">
+          Sign up free<span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-row">
       <div class="footer-brand">
-        <span class="logo-text logo-text-light">earn<sup class="logo-sup-light">2</sup>keep</span>
-        <p class="footer-tagline">EARN IT. KEEP IT.</p>
+        <span class="logo-mark logo-mark-sm">earn<sup>2</sup>keep</span>
+        <span class="footer-tagline">Earn it. Keep it.</span>
       </div>
       <p class="footer-copy">© 2026 earn²keep. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js"></script>
 </body>
 </html>
