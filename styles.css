@@ -152,6 +152,19 @@ section[id] {
   color: var(--e2k-cyan);
 }
 
+/* Keyboard focus states (accessibility) */
+.btn:focus-visible,
+.header-signin:focus-visible,
+.header-nav-links a:focus-visible,
+.footer-links a:focus-visible {
+  outline: 2px solid var(--e2k-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.btn:focus-visible {
+  border-radius: 999px; /* override for pill-shaped buttons */
+}
+
 /* ---------- Top ticker ---------- */
 .ticker {
   background: linear-gradient(90deg, var(--e2k-cyan-dim), #0d4047);
@@ -226,12 +239,30 @@ section[id] {
   flex-shrink: 0;
 }
 .header-signin {
+  display: inline-flex;
+  align-items: center;
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--e2k-text-dim);
   transition: color 0.15s ease;
+  white-space: nowrap;
 }
 .header-signin:hover { color: var(--e2k-text); }
+
+/* External-link icon (used on Sign in / Sign up free links pointing to app.earn2keep.com) */
+.external-icon {
+  display: inline-block;
+  margin-left: 0.3em;
+  font-size: 0.85em;
+  color: currentColor;
+  opacity: 0.7;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  line-height: 1;
+}
+a:hover .external-icon {
+  transform: translate(2px, -2px);
+  opacity: 1;
+}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -1066,8 +1097,14 @@ section[id] {
 }
 
 @media (max-width: 640px) {
-  .header-signin { display: none; }
   .ticker-inner  { font-size: 0.82rem; }
+
+  /* Tighten header so logo + Sign in + Sign up free all fit on small phones */
+  .header-row     { gap: 0.85rem; }
+  .header-actions { gap: 0.85rem; }
+  .header-signin  { font-size: 0.95rem; }
+  .logo-mark      { font-size: 1.625rem; }
+  .btn-sm         { padding: 0.55rem 1rem; font-size: 0.88rem; }
 
   .hero-actions  { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
@@ -1091,6 +1128,15 @@ section[id] {
     justify-content: center;
     text-align: center;
   }
+}
+
+/* Tightest phones — break the Sign up free button to a shorter label if needed */
+@media (max-width: 380px) {
+  .logo-mark      { font-size: 1.4rem; }
+  .header-signin  { font-size: 0.88rem; }
+  .btn-sm         { padding: 0.5rem 0.9rem; font-size: 0.82rem; }
+  .header-row     { gap: 0.6rem; }
+  .header-actions { gap: 0.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -36,29 +36,21 @@ The marketing site at **earn2keep.com**. Static HTML/CSS — no build step, no f
 | Camp (single team) | **$149** | 3.5% transaction & hosting fee on funds raised |
 | Tournament (multi-team) | **$299** | 3.5% transaction & hosting fee on funds raised |
 
-Account setup, event drafting, and exploring the platform are free. The flat fee is charged at event launch; the 3.5% covers payment processing on funds that flow through the platform.
+---
 
-### Camps include
-Registration · Challenge tracking · Sponsor pages · Leaderboards · Messaging · Live progress tracking · 30-day event hosting
+## What's currently on the page (Phase 6 / Slice 6.9 — Phase 6 closed)
 
-### Tournaments include
-Team registration · Event dashboards · Challenge tracking · Fundraising tools · Sponsor visibility · Leaderboards · 30-day event hosting
+Slice 6.9 closes Phase 6 with three small but meaningful polishes:
+
+1. **Sign in is visible on mobile.** Previously hidden below 640px, now visible at all viewport widths. Returning users can log in without scrolling to the footer. At small phone widths the logo and button are tightened to make room.
+
+2. **External-link arrow (↗)** on Sign in (header + footer) and Sign up free (footer). The arrow shifts up-and-right on hover, signaling "this leaves the marketing site for the app."
+
+3. **Keyboard focus states.** All interactive elements (buttons, header nav links, footer links, Sign in) now show a cyan focus ring when navigated by keyboard. Mouse users see no change.
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.12)
-
-Page structure unchanged from 6.11. Slice 6.12 updates:
-
-1. **Pricing section** rewritten with the locked $149 / $299 pricing structure. Camps card has cyan accents (matches the Camp event-card in How it works); Tournaments card has coral. Features use checkmark bullets (the SaaS pricing-page convention) instead of dot bullets.
-
-2. **Closing CTA copy** updated — old line *"Free to set up. Free to run. Pay only when sponsors come through."* was inaccurate now that there's a per-event fee. New line: *"Set up your account free. $149 to launch your first Camp."*
-
-3. **Hero "Sign up free" CTAs unchanged.** Account creation is still genuinely free; the per-event fee only kicks in at event launch. Header, hero, and inline CTAs all keep the "Sign up free" button text.
-
----
-
-## Phase 6 roadmap
+## Phase 6 roadmap — closed
 
 | Slice | Description | Status |
 |---|---|---|
@@ -74,8 +66,10 @@ Page structure unchanged from 6.11. Slice 6.12 updates:
 | 6.8.1 | Copy refinement: drop "not begged for" | ✅ Done |
 | 6.10 | Visual refresh: bento hero, pill eyebrows, gradient badges, CTA box | ✅ Done |
 | 6.11 | Header navigation links | ✅ Done |
-| **6.12** | Real pricing ($149 Camps / $299 Tournaments) | ✅ Done |
-| 6.9 | "Sign in" link polish | ⏳ Last slice in Phase 6 |
+| 6.12 | Real pricing ($149 Camps / $299 Tournaments) | ✅ Done |
+| **6.9** | **"Sign in" link polish** | ✅ **Done** |
+
+**Phase 6 is closed.** The next slice resumes the main project sequence (Phase 7).
 
 ---
 
