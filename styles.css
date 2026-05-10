@@ -355,6 +355,129 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1.6;
 }
 
+/* ---------- Audience section (For Organizers, etc.) ---------- */
+.audience-section {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background: var(--e2k-bg);
+  border-top: 1px solid var(--e2k-border);
+  position: relative;
+}
+.audience-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(53, 213, 223, 0.07), transparent 60%),
+    radial-gradient(ellipse 45% 35% at 15% 80%, rgba(255, 117, 95, 0.06), transparent 60%);
+  pointer-events: none;
+}
+.audience-section > .container { position: relative; z-index: 1; }
+
+.audience-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.role-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0 0 clamp(3rem, 6vw, 4.5rem);
+  padding: 0;
+}
+.role-tile {
+  background: var(--e2k-bg-3);
+  border: 1px solid var(--e2k-border);
+  border-radius: 14px;
+  padding: 1.4rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.role-tile:hover {
+  transform: translateY(-2px);
+  border-color: var(--e2k-border-strong);
+  background: #0e353e;
+}
+.role-tile-other {
+  background: linear-gradient(135deg, #0c2f37, #103942);
+  border-color: rgba(53, 213, 223, 0.2);
+}
+.role-tile-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--e2k-text);
+  letter-spacing: -0.012em;
+  line-height: 1.2;
+}
+.role-tile-context {
+  font-size: 0.97rem;
+  color: var(--e2k-text-dim);
+  line-height: 1.45;
+}
+
+.flow-block {
+  border-top: 1px solid var(--e2k-border);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+.flow-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin: 0 0 clamp(2rem, 4vw, 2.75rem);
+  color: var(--e2k-text);
+}
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.flow-step {
+  background: var(--e2k-bg-3);
+  border: 1px solid var(--e2k-border);
+  border-radius: 16px;
+  padding: 1.85rem 1.6rem 1.75rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.flow-step:hover {
+  transform: translateY(-2px);
+  border-color: var(--e2k-border-strong);
+}
+.flow-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--e2k-coral);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.flow-step-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+  color: var(--e2k-text);
+  letter-spacing: -0.01em;
+}
+.flow-step p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--e2k-text-dim);
+  line-height: 1.55;
+}
+
 /* ---------- Closing CTA strip ---------- */
 .cta-strip {
   padding: clamp(3.5rem, 7vw, 5.5rem) 0;
