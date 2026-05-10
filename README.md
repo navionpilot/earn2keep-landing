@@ -32,32 +32,35 @@ Brand tokens live in `styles.css` under `:root`. Change them there if the brand 
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.4)
+## What's currently on the page (Phase 6 / Slice 6.5)
 
-What ships in Slice 6.4 (For Sponsors section, on top of 6.1 + 6.1.1 + 6.2 + 6.3):
+What ships in Slice 6.5 (How it works section, on top of 6.1 + 6.1.1 + 6.2 + 6.3 + 6.4):
 
 - Top status ticker
 - Sticky header with **Sign in** and **Sign up free** CTAs
 - Hero with the "What is earn²keep?" framing
-- "Three roles. One simple loop." value prop section (Organizers / Participants / Sponsors)
-- For Organizers section — 8-role grid + organizer playbook
-- For Players section — 4 benefit cards + "Your day" flow
-- **NEW: For Sponsors section** — 4 benefit cards + "How sponsoring works" flow
+- "Three roles. One simple loop." value prop section
+- For Organizers section
+- For Players section
+- For Sponsors section
+- **NEW: How it works section** — Camp vs Tournament side-by-side comparison
 - Closing CTA strip
 - 4-column footer
 
-The For Sponsors section now has `id="sponsors"`, so the **For Sponsors** link in the footer activates and smoothly scrolls to it. All three "For You" footer column links are now live.
+The How it works section now has `id="how-it-works"`, so the **How it works** link in the footer activates and smoothly scrolls to it.
 
 ### Footer link status
 
 | Link | Anchor | Status |
 |---|---|---|
 | What is earn²keep? | `#what-is-earn2keep` | ✅ Active (shipped 6.1) |
+| **How it works** | `#how-it-works` | ✅ **Active (shipped 6.5)** |
+| Pricing | `#pricing` | ⏳ Activates in Slice 6.6 |
 | For Organizers | `#organizers` | ✅ Active (shipped 6.2) |
 | For Players | `#players` | ✅ Active (shipped 6.3) |
-| **For Sponsors** | `#sponsors` | ✅ **Active (shipped 6.4)** |
-| How it works | `#how-it-works` | ⏳ Activates in Slice 6.5 |
-| Pricing | `#pricing` | ⏳ Activates in Slice 6.6 |
+| For Sponsors | `#sponsors` | ✅ Active (shipped 6.4) |
+
+Only **Pricing** remains as a placeholder anchor.
 
 ---
 
@@ -69,9 +72,9 @@ The For Sponsors section now has `id="sponsors"`, so the **For Sponsors** link i
 | 6.1.1 | Header/footer polish + readability bumps | ✅ Done |
 | 6.2 | "For Organizers" section (8 roles + playbook) | ✅ Done |
 | 6.3 | "For Players" section (benefits + your day) | ✅ Done |
-| **6.4** | "For Sponsors" section (benefits + how it works) | ✅ Done |
-| 6.5 | "How it works" — Camp + Tournament explained | ⏳ Next |
-| 6.6 | Pricing | ⏳ |
+| 6.4 | "For Sponsors" section (benefits + how it works) | ✅ Done |
+| **6.5** | "How it works" — Camp + Tournament explained | ✅ Done |
+| 6.6 | Pricing | ⏳ Next |
 | 6.7 | Sign-up CTAs throughout | ⏳ |
 | 6.8 | SEO metadata, sitemap, OG images | ⏳ |
 | 6.9 | "Sign in" link polish | ⏳ |

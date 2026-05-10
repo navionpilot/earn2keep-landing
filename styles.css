@@ -526,6 +526,134 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0;
 }
 
+/* ---------- How it works (Camp + Tournament) ---------- */
+.how-it-works-section {
+  padding: clamp(4rem, 8vw, 6rem) 0;
+  background: linear-gradient(180deg, var(--e2k-bg) 0%, var(--e2k-bg-2) 100%);
+  border-top: 1px solid var(--e2k-border);
+  position: relative;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  position: relative;
+  background: var(--e2k-bg-3);
+  border: 1px solid var(--e2k-border);
+  border-radius: 20px;
+  padding: 2.4rem 2rem 2.1rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0.7;
+}
+.event-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--e2k-border-strong);
+  background: #0e353e;
+}
+
+.event-camp::before {
+  background: linear-gradient(90deg, transparent, var(--e2k-cyan), transparent);
+}
+.event-tournament::before {
+  background: linear-gradient(90deg, transparent, var(--e2k-coral), transparent);
+}
+
+.event-type {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+.event-camp .event-type { color: var(--e2k-cyan); }
+.event-tournament .event-type { color: var(--e2k-coral); }
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.55rem;
+  color: var(--e2k-text);
+  line-height: 1.15;
+}
+.event-tagline {
+  font-size: 1.05rem;
+  color: var(--e2k-text);
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+.event-features {
+  list-style: none;
+  margin: 0 0 1.85rem;
+  padding: 0;
+  flex-grow: 1;
+}
+.event-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.85rem;
+  color: var(--e2k-text-dim);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.event-features li:last-child { margin-bottom: 0; }
+.event-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.event-camp .event-features li::before       { background: var(--e2k-cyan); }
+.event-tournament .event-features li::before { background: var(--e2k-coral); }
+.event-features li strong {
+  color: var(--e2k-text);
+  font-weight: 700;
+}
+
+.event-best-for {
+  border-top: 1px solid var(--e2k-border);
+  padding-top: 1.35rem;
+}
+.event-best-for-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+.event-camp .event-best-for-label       { color: var(--e2k-cyan); }
+.event-tournament .event-best-for-label { color: var(--e2k-coral); }
+.event-best-for p {
+  margin: 0;
+  font-size: 0.97rem;
+  color: var(--e2k-text-dim);
+  line-height: 1.5;
+}
+
 /* ---------- Closing CTA strip ---------- */
 .cta-strip {
   padding: clamp(3.5rem, 7vw, 5.5rem) 0;
