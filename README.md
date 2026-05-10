@@ -32,18 +32,34 @@ Brand tokens live in `styles.css` under `:root`. Change them there if the brand 
 
 ---
 
-## What's currently on the page (Phase 6 / Slice 6.1)
+## What's currently on the page (Phase 6 / Slice 6.1.1)
 
-This is the first cut of the Phase 6 rewrite. What ships in Slice 6.1:
+What ships in Slice 6.1.1 (header/footer polish on top of 6.1):
 
 - Top status ticker
-- Sticky header with **Sign in** and **Sign up free** CTAs (both link to `app.earn2keep.com`)
+- Sticky header (76px tall) with **Sign in** and **Sign up free** CTAs (both link to `app.earn2keep.com`)
 - Hero with the "What is earn²keep?" framing — inclusive language for all 8 organizer roles
 - "Three roles. One simple loop." value prop section (Organizers / Participants / Sponsors)
 - Closing CTA strip
-- Footer
+- 4-column footer (Brand / Explore / For You / Get Started) with bottom copyright bar
 
 The page is intentionally short while later slices fill it in.
+
+### Footer link behavior
+
+A few footer links currently point to anchors that don't exist on the page yet:
+
+| Link | Anchor | Activates in |
+|---|---|---|
+| How it works | `#how-it-works` | Slice 6.5 |
+| Pricing | `#pricing` | Slice 6.6 |
+| For Organizers | `#organizers` | Slice 6.2 |
+| For Players | `#players` | Slice 6.3 |
+| For Sponsors | `#sponsors` | Slice 6.4 |
+
+Until each section ships, clicking those links does nothing visible (the browser silently fails to find the anchor — graceful no-op). They start working automatically as later slices add the matching `id="..."` sections to `index.html`.
+
+Privacy Policy and Terms of Service are intentionally **not** in the footer yet — they ship in Phase 9 with real legal copy. Better to have no link than a broken one on a fundraising site.
 
 ---
 
@@ -51,7 +67,8 @@ The page is intentionally short while later slices fill it in.
 
 | Slice | Description | Status |
 |---|---|---|
-| **6.1** | Hero + value prop + chrome | ✅ Done |
+| 6.1 | Hero + value prop + chrome | ✅ Done |
+| **6.1.1** | Header/footer polish + readability bumps | ✅ Done |
 | 6.2 | "For organizers" section (8 roles in detail) | ⏳ Next |
 | 6.3 | "For players / participants" section | ⏳ |
 | 6.4 | "For sponsors" section | ⏳ |
