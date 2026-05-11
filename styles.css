@@ -63,13 +63,23 @@ section[id] {
 }
 
 /* ---------- Wordmark ---------- */
+/* Slice 6.14 — bigger header logo with cyan tagline below, matching the
+   app dashboard's header brand block. .logo (the link wrapper) becomes
+   a vertical flex column so .logo-mark and .logo-tagline stack. */
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  text-decoration: none;
+  flex-shrink: 0;
+}
 .logo-mark {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.875rem;
+  font-size: 2.125rem;        /* ~34px desktop — up from 1.875rem */
   letter-spacing: -0.025em;
   color: var(--e2k-text);
-  display: inline-block;
   line-height: 1;
 }
 .logo-mark sup {
@@ -79,6 +89,20 @@ section[id] {
   margin: 0 1px;
   font-weight: 800;
 }
+.logo-tagline {
+  font-size: 0.7rem;          /* ~11px */
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--e2k-cyan);
+  margin-top: 0.45rem;
+}
+
+/* Don't show the tagline inside the FOOTER's logo (the footer already has
+   its own .footer-tagline section). Belt-and-suspenders — the footer
+   markup doesn't include .logo-tagline either, but this hides it just in
+   case future edits add it accidentally. */
+.site-footer .logo-tagline { display: none; }
 
 /* ---------- Eyebrow (pill chip) ---------- */
 .eyebrow {
@@ -200,7 +224,7 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 90px;             /* Slice 6.14 — up from 76px to fit logo+tagline */
   gap: 1.5rem;
 }
 .header-nav-links {
@@ -1300,6 +1324,11 @@ section[id] {
 @media (max-width: 640px) {
   .header-signin { display: none; }
   .ticker-inner  { font-size: 0.82rem; }
+
+  /* Slice 6.14 — scale the logo down on mobile so the header still fits */
+  .header-row    { height: 78px; }
+  .logo-mark     { font-size: 1.75rem; }
+  .logo-tagline  { font-size: 0.625rem; letter-spacing: 0.16em; margin-top: 0.35rem; }
 
   .hero-actions  { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
