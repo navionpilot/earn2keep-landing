@@ -152,19 +152,6 @@ section[id] {
   color: var(--e2k-cyan);
 }
 
-/* Keyboard focus states (accessibility) */
-.btn:focus-visible,
-.header-signin:focus-visible,
-.header-nav-links a:focus-visible,
-.footer-links a:focus-visible {
-  outline: 2px solid var(--e2k-cyan);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-.btn:focus-visible {
-  border-radius: 999px; /* override for pill-shaped buttons */
-}
-
 /* ---------- Top ticker ---------- */
 .ticker {
   background: linear-gradient(90deg, var(--e2k-cyan-dim), #0d4047);
@@ -239,30 +226,12 @@ section[id] {
   flex-shrink: 0;
 }
 .header-signin {
-  display: inline-flex;
-  align-items: center;
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--e2k-text-dim);
   transition: color 0.15s ease;
-  white-space: nowrap;
 }
 .header-signin:hover { color: var(--e2k-text); }
-
-/* External-link icon (used on Sign in / Sign up free links pointing to app.earn2keep.com) */
-.external-icon {
-  display: inline-block;
-  margin-left: 0.3em;
-  font-size: 0.85em;
-  color: currentColor;
-  opacity: 0.7;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  line-height: 1;
-}
-a:hover .external-icon {
-  transform: translate(2px, -2px);
-  opacity: 1;
-}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -1070,6 +1039,238 @@ a:hover .external-icon {
   color: var(--e2k-text-muted);
 }
 
+/* Slice 6.13 — social icons (in footer brand column) */
+.footer-social {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--e2k-border, rgba(255, 255, 255, 0.08));
+  color: var(--e2k-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.footer-social a:hover {
+  color: var(--e2k-cyan);
+  background: rgba(53, 213, 223, 0.08);
+  border-color: rgba(53, 213, 223, 0.4);
+  transform: translateY(-1px);
+}
+.footer-social svg { display: block; }
+
+/* Slice 6.13 — legal link row in footer bottom */
+.footer-legal-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.9rem;
+}
+.footer-legal-links a {
+  color: var(--e2k-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.footer-legal-links a:hover { color: var(--e2k-cyan); }
+
+/* ============================================
+   Slice 6.13 — Subpage layouts (about, help, sitemap, legal)
+   ============================================ */
+
+/* Main wrapper for subpages — uses same header/footer as index, but
+   centers a single readable content column. */
+.subpage-main {
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2rem) clamp(3rem, 8vw, 6rem);
+}
+.subpage-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.subpage-eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--e2k-cyan);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.subpage-title {
+  font-family: var(--e2k-display, "Sora", sans-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 1rem;
+}
+.subpage-lede {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--e2k-text-muted);
+  margin: 0 0 2.5rem;
+}
+.subpage-section {
+  margin-bottom: 2.5rem;
+}
+.subpage-section > h2 {
+  font-family: var(--e2k-display, "Sora", sans-serif);
+  font-size: clamp(1.35rem, 2.8vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin: 0 0 0.85rem;
+}
+.subpage-section > h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.5rem 0 0.65rem;
+}
+.subpage-section p,
+.subpage-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--e2k-text);
+}
+.subpage-section p { margin: 0 0 1rem; }
+.subpage-section ul,
+.subpage-section ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+.subpage-section li { margin-bottom: 0.5rem; }
+.subpage-section strong { color: var(--e2k-text); font-weight: 700; }
+.subpage-section a {
+  color: var(--e2k-cyan);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Slice 6.13 — Big "LAWYER REVIEW REQUIRED" banner on every legal page */
+.legal-banner {
+  background: linear-gradient(135deg, rgba(255, 117, 95, 0.16), rgba(255, 117, 95, 0.08));
+  border: 1.5px solid rgba(255, 117, 95, 0.5);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.legal-banner-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+.legal-banner-title {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--e2k-coral);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+.legal-banner-body {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--e2k-text);
+  margin: 0;
+}
+
+/* Slice 6.13 — Help/FAQ details + summary */
+.faq-item {
+  border: 1px solid var(--e2k-border, rgba(255, 255, 255, 0.08));
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 10px;
+  margin-bottom: 0.65rem;
+  overflow: hidden;
+}
+.faq-item summary {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--e2k-text);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--e2k-cyan);
+  font-weight: 400;
+  transition: transform 0.15s ease;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item > div {
+  padding: 0 1.25rem 1rem;
+  color: var(--e2k-text-muted);
+  line-height: 1.65;
+  font-size: 0.97rem;
+}
+.faq-group-title {
+  font-family: var(--e2k-display, "Sora", sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2rem 0 0.85rem;
+  color: var(--e2k-cyan);
+}
+.faq-group-title:first-child { margin-top: 0; }
+
+/* Slice 6.13 — Sitemap layout */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.sitemap-section {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--e2k-border, rgba(255, 255, 255, 0.08));
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+}
+.sitemap-section h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--e2k-cyan);
+}
+.sitemap-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sitemap-section li { margin-bottom: 0.4rem; }
+.sitemap-section li a {
+  color: var(--e2k-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+.sitemap-section li a:hover { color: var(--e2k-cyan); }
+.sitemap-section li .sitemap-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--e2k-text-muted);
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .header-nav-links { display: none; }
@@ -1097,14 +1298,8 @@ a:hover .external-icon {
 }
 
 @media (max-width: 640px) {
+  .header-signin { display: none; }
   .ticker-inner  { font-size: 0.82rem; }
-
-  /* Tighten header so logo + Sign in + Sign up free all fit on small phones */
-  .header-row     { gap: 0.85rem; }
-  .header-actions { gap: 0.85rem; }
-  .header-signin  { font-size: 0.95rem; }
-  .logo-mark      { font-size: 1.625rem; }
-  .btn-sm         { padding: 0.55rem 1rem; font-size: 0.88rem; }
 
   .hero-actions  { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
@@ -1128,15 +1323,6 @@ a:hover .external-icon {
     justify-content: center;
     text-align: center;
   }
-}
-
-/* Tightest phones — break the Sign up free button to a shorter label if needed */
-@media (max-width: 380px) {
-  .logo-mark      { font-size: 1.4rem; }
-  .header-signin  { font-size: 0.88rem; }
-  .btn-sm         { padding: 0.5rem 0.9rem; font-size: 0.82rem; }
-  .header-row     { gap: 0.6rem; }
-  .header-actions { gap: 0.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
