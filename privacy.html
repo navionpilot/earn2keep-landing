@@ -115,8 +115,66 @@
         </ul>
       </section>
 
+      <section class="subpage-section" id="ai-processing">
+        <h2>4. AI-Assisted Verification</h2>
+        <p>
+          earn²keep uses artificial intelligence to help organizers
+          review challenge submissions. This section explains what that
+          means for your data.
+        </p>
+        <h3>What we send to AI</h3>
+        <p>
+          For certain challenge types (currently rep-counting challenges like
+          push-ups, juggling, free throws, and time-based activities like
+          plank holds), we extract approximately 10 still-image frames from
+          submitted videos and send them to Anthropic, the maker of Claude
+          AI. Anthropic's AI analyzes the frames and returns:
+        </p>
+        <ul>
+          <li>A count of repetitions performed (or seconds of activity sustained)</li>
+          <li>A confidence rating (high, medium, low, or unable-to-verify)</li>
+          <li>A brief written explanation of what the AI saw</li>
+        </ul>
+        <h3>What we don&apos;t send</h3>
+        <ul>
+          <li>The full video file (only sampled frames)</li>
+          <li>Audio from the video</li>
+          <li>The participant&apos;s name, age, school, or any other
+            personally identifying information beyond what is visually
+            present in the frames</li>
+          <li>Frames from non-eligible challenges (e.g., service hours,
+            reading challenges) — these go straight to manual coach review
+            with no AI involvement</li>
+        </ul>
+        <h3>Anthropic&apos;s data practices</h3>
+        <p>
+          Per Anthropic&apos;s API terms in effect at the time of writing,
+          Anthropic does not train its models on data submitted via the
+          API, and does not retain such data after processing the request.
+          For Anthropic&apos;s current policies, see
+          <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a>.
+        </p>
+        <h3>Automated approval</h3>
+        <p>
+          When an organizer has enabled the feature and the AI returns a
+          high-confidence count that matches or exceeds what the player
+          claimed, the submission may be approved automatically without
+          human review. The player and organizer can see when this has
+          happened (each auto-approved submission is labeled as such).
+          Auto-approval is off by default — organizers opt in.
+        </p>
+        <h3>Opting out</h3>
+        <p>
+          Parents and guardians can opt their child out of AI verification
+          at any time from the player&apos;s profile page in the app
+          (look for the &quot;AI Verification&quot; section). When opted
+          out, no frames are sent to Anthropic for that player, and all
+          submissions go to manual coach review.
+        </p>
+      </section>
+
       <section class="subpage-section" id="childrens-privacy">
-        <h2>4. Children&apos;s Privacy (COPPA)</h2>
+        <h2>5. Children&apos;s Privacy (COPPA)</h2>
         <p>
           <strong>This section applies to users under 13 years old.</strong>
         </p>
@@ -172,7 +230,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>5. Data Retention</h2>
+        <h2>6. Data Retention</h2>
         <p>
           We retain account information for as long as your account is active
           and for a reasonable period after closure to comply with legal
@@ -183,7 +241,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>6. Your Rights</h2>
+        <h2>7. Your Rights</h2>
         <p>
           Depending on your jurisdiction, you may have the right to:
         </p>
@@ -205,7 +263,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>7. Security</h2>
+        <h2>8. Security</h2>
         <p>
           We use industry-standard measures to protect your information,
           including encryption in transit (HTTPS), access controls,
@@ -216,7 +274,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>8. International Users</h2>
+        <h2>9. International Users</h2>
         <p>
           earn²keep is operated from the United States. If you access the
           Service from outside the US, your information will be transferred
@@ -226,7 +284,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>9. Cookies</h2>
+        <h2>10. Cookies</h2>
         <p>
           We use cookies for authentication, security, and analytics. You
           can disable cookies in your browser settings, but the Service may
@@ -235,7 +293,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>10. Changes to This Policy</h2>
+        <h2>11. Changes to This Policy</h2>
         <p>
           We may update this Privacy Policy from time to time. Material
           changes will be communicated by email or via the Service. The
@@ -244,7 +302,7 @@
       </section>
 
       <section class="subpage-section">
-        <h2>11. Contact Us</h2>
+        <h2>12. Contact Us</h2>
         <p>
           Questions about privacy, your data, or this Policy?
           Email <a href="mailto:support@earn2keep.com">support@earn2keep.com</a>.
