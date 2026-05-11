@@ -77,7 +77,7 @@ section[id] {
 .logo-mark {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2.125rem;        /* ~34px desktop — up from 1.875rem */
+  font-size: 2.625rem;        /* Slice 6.16 — ~42px desktop, up from 2.125rem */
   letter-spacing: -0.025em;
   color: var(--e2k-text);
   line-height: 1;
@@ -90,12 +90,12 @@ section[id] {
   font-weight: 800;
 }
 .logo-tagline {
-  font-size: 0.7rem;          /* ~11px */
+  font-size: 0.8rem;          /* Slice 6.16 — ~13px desktop, up from 0.7rem */
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--e2k-cyan);
-  margin-top: 0.45rem;
+  margin-top: 0.55rem;        /* Slice 6.16 — bumped slightly for the bigger mark */
 }
 
 /* Don't show the tagline inside the FOOTER's logo (the footer already has
@@ -224,7 +224,7 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px;             /* Slice 6.14 — up from 76px to fit logo+tagline */
+  height: 102px;            /* Slice 6.16 — up from 90px to fit bigger logo */
   gap: 1.5rem;
 }
 .header-nav-links {
@@ -1325,10 +1325,10 @@ section[id] {
   .header-signin { display: none; }
   .ticker-inner  { font-size: 0.82rem; }
 
-  /* Slice 6.14 — scale the logo down on mobile so the header still fits */
-  .header-row    { height: 78px; }
-  .logo-mark     { font-size: 1.75rem; }
-  .logo-tagline  { font-size: 0.625rem; letter-spacing: 0.16em; margin-top: 0.35rem; }
+  /* Slice 6.16 — scale the bigger logo down on mobile (still bigger than 6.14) */
+  .header-row    { height: 86px; }            /* was 78px */
+  .logo-mark     { font-size: 2rem; }         /* was 1.75rem */
+  .logo-tagline  { font-size: 0.7rem; letter-spacing: 0.16em; margin-top: 0.4rem; }
 
   .hero-actions  { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
