@@ -1,32 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page — highest priority -->
   <url>
     <loc>https://earn2keep.com/</loc>
-    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- About — adjust filename if yours differs -->
   <url>
     <loc>https://earn2keep.com/about.html</loc>
-    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Pricing — adjust filename if yours differs -->
   <url>
-    <loc>https://earn2keep.com/help.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <loc>https://earn2keep.com/pricing.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Contact — adjust filename if yours differs -->
   <url>
-    <loc>https://earn2keep.com/sitemap.html</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://earn2keep.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Legal pages — already exist per my notes -->
+  <url>
+    <loc>https://earn2keep.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-  <!--
-    Legal pages (terms, privacy, aup) are intentionally marked noindex via
-    meta robots while in draft form. Once lawyer-reviewed and finalized,
-    add them here as well.
-  -->
+
+  <url>
+    <loc>https://earn2keep.com/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://earn2keep.com/aup.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>
