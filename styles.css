@@ -943,6 +943,70 @@ section[id] {
   line-height: 1.5;
 }
 
+/* ============================================================
+   PRICING — 3-column desktop layout + featured-tier emphasis
+   ============================================================ */
+
+/* Force exactly 3 columns at desktop (overrides .event-grid's auto-fit) */
+@media (min-width: 960px) {
+  .pricing-section .event-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+/* Subtle radial gradient on every pricing card — atmosphere instead of flat dark */
+.pricing-section .event-card {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(53, 213, 223, 0.05), transparent 70%),
+    var(--e2k-bg-3);
+}
+
+.pricing-section .event-card.pricing-tournament {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 117, 95, 0.05), transparent 70%),
+    var(--e2k-bg-3);
+}
+
+/* Featured tier (Camp) — cyan glow, lifted shadow, persistent emphasis */
+.pricing-section .event-card.featured {
+  border-color: rgba(53, 213, 223, 0.42);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(53, 213, 223, 0.13), transparent 70%),
+    var(--e2k-bg-3);
+  box-shadow:
+    0 0 0 1px rgba(53, 213, 223, 0.18),
+    0 24px 48px -28px rgba(53, 213, 223, 0.45);
+}
+.pricing-section .event-card.featured::before {
+  height: 3px;
+  opacity: 1;
+}
+.pricing-section .event-card.featured:hover {
+  border-color: rgba(53, 213, 223, 0.58);
+  box-shadow:
+    0 0 0 1px rgba(53, 213, 223, 0.32),
+    0 28px 56px -28px rgba(53, 213, 223, 0.6);
+}
+
+/* "Most Popular" pill badge in the featured card's top-right */
+.pricing-badge {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: var(--e2k-cyan);
+  color: var(--e2k-bg);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.32rem 0.72rem;
+  border-radius: 999px;
+  z-index: 2;
+  box-shadow: 0 4px 14px -4px rgba(53, 213, 223, 0.45);
+}
+
 /* ---------- Inline CTA (mid-page conversion points) ---------- */
 .inline-cta {
   margin-top: clamp(3rem, 5vw, 4rem);
