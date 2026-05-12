@@ -4,6 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- L28 — On page reload (F5 / Cmd-R / pull-to-refresh), strip any URL
+       hash and scroll to the top. Without this, refreshing while scrolled
+       to e.g. #pricing keeps the hash in the URL and the browser dutifully
+       re-scrolls to #pricing on every reload. We want refreshes to behave
+       like a fresh visit — top of page. In-page anchor links (clicking a
+       nav link to #pricing) and external links with hash still work, since
+       those aren't classified as "reload" by the Performance Navigation API. -->
+  <script>
+    (function () {
+      try {
+        var navEntries = performance.getEntriesByType("navigation");
+        var isReload = navEntries.length > 0 && navEntries[0].type === "reload";
+        if (isReload && window.location.hash) {
+          // Strip the hash from the URL without adding a history entry
+          history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search
+          );
+          // The browser may have already started honoring the hash by now;
+          // force scroll to top both immediately and once the DOM is ready.
+          window.scrollTo(0, 0);
+          document.addEventListener("DOMContentLoaded", function () {
+            window.scrollTo(0, 0);
+          });
+        }
+      } catch (e) {
+        // Older browsers without Performance Navigation API — silently no-op.
+      }
+    })();
+  </script>
+
   <!-- Theme -->
   <meta name="theme-color" content="#041418" />
   <meta name="color-scheme" content="dark" />
