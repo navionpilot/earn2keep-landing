@@ -476,6 +476,7 @@ section[id] {
   color: var(--e2k-text-dim);
   margin: 0;
   line-height: 1.65;
+  text-align: center;
 }
 /* Slice 6.17 — when two section-ledes stack (e.g., a two-paragraph
    "what is" explanation), give them proper breathing room. */
