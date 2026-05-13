@@ -474,7 +474,8 @@ section[id] {
 .section-lede {
   font-size: 1.15rem;
   color: var(--e2k-text-dim);
-  margin: 0;
+  margin: 0 auto;
+  max-width: 640px;
   line-height: 1.65;
   text-align: center;
 }
