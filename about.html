@@ -56,9 +56,31 @@
         <a class="btn btn-primary btn-sm" href="https://app.earn2keep.com/signup">
           Sign up free<span class="arrow" aria-hidden="true">→</span>
         </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile nav backdrop + drawer (hidden on desktop via CSS) -->
+  <div class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    <div class="mobile-nav-inner">
+      <a href="/#what-is-earn2keep" class="mobile-nav-link">What is it</a>
+      <a href="/#how-it-works" class="mobile-nav-link">How it works</a>
+      <a href="/#organizers" class="mobile-nav-link">Organizers</a>
+      <a href="/#players" class="mobile-nav-link">Players</a>
+      <a href="/#supporters" class="mobile-nav-link">Supporters</a>
+      <a href="/#pricing" class="mobile-nav-link">Pricing</a>
+      <div class="mobile-nav-divider"></div>
+      <a href="https://app.earn2keep.com/login" class="mobile-nav-link mobile-nav-link-signin">Sign in</a>
+      <a href="https://app.earn2keep.com/signup" class="btn btn-primary mobile-nav-cta">Sign up free <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </nav>
 
   <main class="subpage-main">
     <div class="container subpage-container">
@@ -248,5 +270,43 @@
 
   <!-- Vercel Web Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var drawer = document.querySelector('.mobile-nav');
+  var backdrop = document.querySelector('.mobile-nav-backdrop');
+  var closeBtn = document.querySelector('.mobile-nav-close');
+  if (!toggle || !drawer) return;
+
+  function openMenu() {
+    document.body.classList.add('mobile-nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    document.body.classList.remove('mobile-nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function toggleMenu() {
+    if (document.body.classList.contains('mobile-nav-open')) closeMenu();
+    else openMenu();
+  }
+
+  toggle.addEventListener('click', toggleMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+  // Close drawer when any link inside it is tapped
+  Array.prototype.forEach.call(drawer.querySelectorAll('a'), function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.keyCode === 27) closeMenu();
+  });
+})();
+</script>
+
 </body>
 </html>
